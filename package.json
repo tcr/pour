@@ -1,0 +1,11 @@
+{ "name"          : "pour"
+, "description"   : "A DSL for serial/parallel asynchronous programming in CoffeeScript"
+, "url"           : "http://github.com/timcameronryan/pour"
+, "keywords"      : ["async", "serial", "parallel", "coffeescript", "dsl"]
+, "author"        : "Tim Cameron Ryan <tim@timryan.org>"
+, "contributors"  : []
+, "dependencies"  : []
+, "lib"           : "."
+, "main"          : "pour.js"
+, "version"       : "0.1"
+}
