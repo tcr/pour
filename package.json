@@ -6,6 +6,6 @@
 , "contributors"  : []
 , "dependencies"  : []
 , "lib"           : "."
-, "main"          : "pour.js"
-, "version"       : "0.1"
+, "main"          : "pour.coffee"
+, "version"       : "0.0.1"
 }
