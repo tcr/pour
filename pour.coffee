@@ -26,7 +26,9 @@ exports[0] = serial = (specs...) ->
 		do (cur, next) ->
 			spec[cur.key] = (args...) ->
 				spec.next = (err, args...) ->
-					if err then spec.catch(err, args...) if spec.catch
+					if err
+						if spec.catch then spec.catch(err, args...)
+						else throw err
 					else spec[next.key](args...) if next
 				cur.func.apply(spec, args)
 	spec[steps[0].key].apply(spec)
