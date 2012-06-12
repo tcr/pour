@@ -34,7 +34,7 @@ You can easily nest parallel and serial steps by using the `@parallel` and `@ser
             @serial
                 1: api.uploadFile 'file.txt', @next
                 2: api.logStats 'file.txt', @up.next
-        finally (res) ->
+        finally: (res) ->
             console.log res.upload
 
 Released under the MIT license.
