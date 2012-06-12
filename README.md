@@ -4,7 +4,7 @@
 
 Require the package:
 
-    [serial, parallel] = require 'pour'
+    {serial, parallel} = require 'pour'
 
 Execute steps in serial, passing the results of each function to the next step using the `@next` callback, or catching errors as they occur:
 

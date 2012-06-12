@@ -15,7 +15,7 @@ combine = (objs...) ->
 # evaluates steps in serial
 #
 
-exports[0] = serial = (specs...) ->
+exports.serial = serial = (specs...) ->
 	spec = combine specs...
 	spec.serial = (specs...) -> serial specs..., up: spec
 	spec.parallel = (specs...) -> parallel specs..., up: spec
@@ -38,14 +38,14 @@ exports[0] = serial = (specs...) ->
 # evaluates steps in parallel
 #
 
-exports[1] = parallel = (specs...) ->
+exports.parallel = parallel = (specs...) ->
 	spec = combine specs... 
 
 	res = {}; stepc = 0; steps = {}
 	for key, step of spec when key not in ['catch', 'finally', 'up', 'serial', 'parallel']
 		steps[key] = step
 		stepc++
-	if stepc == 0 then return steps.finally {}
+	if stepc == 0 then return spec.finally {}
 	for key, step of steps
 		do (key, step) ->
 			ths = next: (err, args...) -> 
